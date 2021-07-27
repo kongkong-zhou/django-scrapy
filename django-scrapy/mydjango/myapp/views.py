@@ -28,55 +28,60 @@ class MovieDetail(generics.RetrieveAPIView):
 class TeleList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(
         Q(classification=11) | Q(classification=12) | Q(classification=13) | Q(classification=14) | Q(classification=15)
-        | Q(classification=16) | Q(classification=17) | Q(classification=18)).order_by('-update_time')
+        | Q(classification=16) | Q(classification=17)).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
 class TeleDetail(generics.RetrieveAPIView):
     queryset = models.Movieapi.objects.filter(
         Q(classification=11) | Q(classification=12) | Q(classification=13) | Q(classification=14) | Q(classification=15)
-        | Q(classification=16) | Q(classification=17) | Q(classification=18))
+        | Q(classification=16) | Q(classification=17))
     serializer_class = serializers.MovieSerializer
 
 # 综艺
 class VarietyList(generics.ListAPIView):
-    queryset = models.Movieapi.objects.filter(classification=20).order_by('-update_time')
+    queryset = models.Movieapi.objects.filter(
+        Q(classification=18) | Q(classification=19) | Q(classification=20) | Q(classification=21)).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
 class VarietyDetail(generics.RetrieveAPIView):
-    queryset = models.Movieapi.objects.filter(classification=20).order_by('-update_time')
+    queryset = models.Movieapi.objects.filter(
+        Q(classification=18) | Q(classification=19) | Q(classification=20) | Q(classification=21))
     serializer_class = serializers.MovieSerializer
 
 # 卡通视图
 class CartoonList(generics.ListAPIView):
-    queryset = models.Movieapi.objects.filter(classification=19).order_by('-update_time')
+    queryset = models.Movieapi.objects.filter(
+        Q(classification=22) | Q(classification=23) | Q(classification=24) | Q(classification=25)).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
 class CartoonDetail(generics.RetrieveAPIView):
-    queryset = models.Movieapi.objects.filter(classification=19).order_by('-update_time')
+    queryset = models.Movieapi.objects.filter(Q(classification=22) | Q(classification=23)
+                                              | Q(classification=24) | Q(classification=25))
     serializer_class = serializers.MovieSerializer
 
-class DianyingList(generics.ListAPIView):
+
+class DongzuoList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=1).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class DongzuoList(generics.ListAPIView):
+class XijuList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=2).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class XijuList(generics.ListAPIView):
+class AiqingList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=3).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class AiqingList(generics.ListAPIView):
+class KehuanList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=4).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class KehuanList(generics.ListAPIView):
+class KongbuList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=5).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class KongbuList(generics.ListAPIView):
+class FanzuiList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=6).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class JuqingList(generics.ListAPIView):
+class ZhanzhenList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=7).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class ZhanzhenList(generics.ListAPIView):
+class JuqingList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=8).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class LunliList(generics.ListAPIView):
+class DongmanList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=9).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
 class JiluqianList(generics.ListAPIView):
@@ -98,21 +103,42 @@ class AmericaList(generics.ListAPIView):
 class JanpenList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=15).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class KoreaList(generics.ListAPIView):
+class OverseasList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=16).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class TaiguoList(generics.ListAPIView):
+class KoreaList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=17).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class OverseasList(generics.ListAPIView):
+
+
+class ChinaVarityList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=18).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class DongmanList(generics.ListAPIView):
+class JanpenVarityList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=19).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
-class ZongyiList(generics.ListAPIView):
+class HongKongVarityList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(classification=20).order_by('-update_time')
     serializer_class = serializers.MovieSerializer
+class AmericanVarityList(generics.ListAPIView):
+    queryset = models.Movieapi.objects.filter(classification=21).order_by('-update_time')
+    serializer_class = serializers.MovieSerializer
+class ChinaCartoonVarityList(generics.ListAPIView):
+    queryset = models.Movieapi.objects.filter(classification=22).order_by('-update_time')
+    serializer_class = serializers.MovieSerializer
+class JapenCartoonVarityList(generics.ListAPIView):
+    queryset = models.Movieapi.objects.filter(classification=23).order_by('-update_time')
+    serializer_class = serializers.MovieSerializer
+class AmericanCartoonVarityList(generics.ListAPIView):
+    queryset = models.Movieapi.objects.filter(classification=24).order_by('-update_time')
+    serializer_class = serializers.MovieSerializer
+class OverseasCartoonVarityList(generics.ListAPIView):
+    queryset = models.Movieapi.objects.filter(classification=25).order_by('-update_time')
+    serializer_class = serializers.MovieSerializer
+class InterpretationList(generics.ListAPIView):
+    queryset = models.Movieapi.objects.filter(classification=26).order_by('-update_time')
+    serializer_class = serializers.MovieSerializer
+
 
 
 

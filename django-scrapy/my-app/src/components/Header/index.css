@@ -1,0 +1,71 @@
+@import '~antd/dist/antd.css';
+
+.M-header {
+    margin: auto; 
+    height: 100px;
+    line-height: 40px;
+    font-size: 36px;
+    color: #fff;
+    background-color: #409EFF;
+      
+}
+
+.logo {
+    margin:auto;
+    height: 67px;
+    color:rgb(63, 49, 56);
+}
+
+
+.nav {
+    margin: 10px auto;
+    height: 40px;
+        background-color: #690;
+    }        
+
+.nav ul {
+list-style: none;
+margin-left: 25px;
+}          
+
+.nav li {
+display: inline;               
+}          
+
+.nav a {
+line-height: 40px;
+color: #fff;
+text-decoration: none;
+padding: 20px 20px;
+}          
+
+.nav a:hover {
+background-color: #060;
+}
+
+
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 10vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #e9ecf3;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }

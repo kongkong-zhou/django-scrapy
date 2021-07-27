@@ -12,7 +12,7 @@ from scrapy.pipelines.images import ImagesPipeline
 from scrapy.exceptions import DropItem
 import scrapy
 
-class ImagePipeline(ImagesPipeline):
+class ImagesPipeline(ImagesPipeline):
     def get_media_requests(self, item, info):
         yield scrapy.Request(item['img'],meta={'name':item['name']})
     def item_completed(self, results, item, info):

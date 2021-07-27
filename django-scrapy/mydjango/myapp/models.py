@@ -14,7 +14,7 @@ class Classification(models.Model):
 class Movieapi(models.Model):
     img = models.CharField(max_length=225, blank=True, null=True)
     image_paths = models.CharField(max_length=225,blank=True,null=True)
-    name = models.CharField(max_length=25,unique=True)
+    name = models.CharField(max_length=255,unique=True)
     hd = models.CharField(max_length=25, blank=True, null=True)
     score = models.CharField(max_length=10, blank=True, null=True)
     other_name = models.CharField(max_length=100, blank=True, null=True)

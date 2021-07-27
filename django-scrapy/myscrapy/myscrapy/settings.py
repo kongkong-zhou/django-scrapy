@@ -74,10 +74,10 @@ django.setup()
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'myscrapy.pipelines.MyscrapyPipeline': 300,
-   'myscrapy.pipelines.ImagePipeline':1,
+   'myscrapy.pipelines.ImagesPipeline':1,
 }
 MEDIA_ALLOW_REDIRECTS = True
-IMAGES_STORE = "/Users/zhoumengxian/Downloads/hmtv/video/hm/public"
+IMAGES_STORE = "../my-app/public"
 # IMAGES_URLS_FIELD = 'src'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
