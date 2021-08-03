@@ -85,7 +85,6 @@ class TiankongSpider(scrapy.Spider):
             hls_urls = response.xpath("//div[@class='vodplayinfo']/div/ul[2]/li")
             for hls_url in hls_urls:
                 hlsurl = hls_url.xpath("./text()").extract()[0].split('$')
-                print(hlsurl)
                 hlss.append(hlsurl)
         except Exception as e:
             print(e)

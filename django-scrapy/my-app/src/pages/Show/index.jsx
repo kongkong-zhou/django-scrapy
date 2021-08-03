@@ -18,7 +18,7 @@ export default class Show extends Component {
       }
     // 获取数据方法函数
     getApiData = (id) => {
-        var api = this.state.url + `/api/${id}`;  //拼接api地址
+        var api = this.state.url + `/api/${id}/`;  //拼接api地址
         axios.get(api)
             .then(response => {
                 this.updateAppState({movie:response.data,tag:response.data.classification,list:response.data.movieofvideo});
@@ -27,6 +27,22 @@ export default class Show extends Component {
                 this.updateAppState({err:error.message});
             })
     }
+    compareUp = (propertyName,data) => {
+        if ((typeof data[0][propertyName]) != "number") { // 属性值为非数字
+            return function(object1, object2) {
+                var value1 = object1[propertyName];
+                var value2 = object2[propertyName];
+                return value1.localeCompare(value2);
+            }
+        }
+        else {
+            return function(object1, object2) { // 属性值为数字
+                var value1 = object1[propertyName];
+                var value2 = object2[propertyName];
+                return value1 - value2;
+            }
+        }
+    }
     componentDidMount() {
         const {id} = this.props.match.params
         this.getApiData(id);
@@ -34,6 +50,7 @@ export default class Show extends Component {
 
     render() {    
         const {movie,list,tag} = this.state
+        list.sort(this.compareUp("name","list"))
         return (
             <section className="container">
                 <div className="content-wrap">
@@ -47,9 +64,9 @@ export default class Show extends Component {
                                 <ul className="article-meta">
                                     <li>类型：
                                     {
-                                        tag.map((tagObj)=>{
+                                        tag.map((tagObj,index)=>{
                                             return (
-                                                <Link to={`/tags/${tagObj.classify_tag}`} rel="category tag" key={tagObj.id}>{tagObj.classify_name}</Link>
+                                                <Link to={`tags/${tagObj.classify_tag}`} rel="category tag" key={index}>{tagObj.classify_name}</Link>
                                             )
                                         })
                                     }
@@ -93,9 +110,9 @@ export default class Show extends Component {
                             </article>
                             <div className="article-tags">标签：
                                 {
-                                    tag.map((tagObj)=>{
+                                    tag.map((tagObj,index)=>{
                                         return (
-                                            <Link to={`/tags/${tagObj.classify_tag}`} rel="tag" data-original-title="" title="" key={tagObj.id}>{tagObj.classify_name}</Link>
+                                            <Link to={`/tags/${tagObj.classify_tag}`} rel="tag" data-original-title="" title="" key={index}>{tagObj.classify_name}</Link>
                                         )
                                     })
                                 }

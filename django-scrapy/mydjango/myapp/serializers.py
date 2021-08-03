@@ -3,7 +3,7 @@ from . import models
 
 class VideoSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ("id","video_url","name")
+        fields = ("name","id","video_url")
         model = models.Video
 
 class VideoYunSerializer(serializers.ModelSerializer):

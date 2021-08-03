@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import PubSub from 'pubsub-js'
 import { Pagination } from 'antd'
 // import Pic from '../Pic'
+import './index.css'
 
 export default class Container extends Component {
     state = {
@@ -46,13 +47,13 @@ export default class Container extends Component {
                                 <div className="pingfen"><span>{listObj.score}</span></div>
                                 <div className="zhuangtai"><span></span></div>
                                 <h2>
-                                    <Link to={`show/${listObj.id}`}>{listObj.name}</Link>
+                                    <Link to={`/show/${listObj.id}`}>{listObj.name}</Link>
                                 </h2>
                                 <div className="meta">
                                 <span className="tags">
                                         {listObj.classification.map((classObj,index)=>{
                                             return (
-                                                <Link to={`tags/${classObj.classify_tag}`} key={index}>{classObj.classify_name}</Link>
+                                                <Link to={`/tags/${classObj.classify_tag}`} key={index}>{classObj.classify_name}</Link>
                                                 
                                             )
                                         })}
@@ -63,7 +64,7 @@ export default class Container extends Component {
                         )
                     })
                 }
-                <div>
+                <div className="paginations">
                     <Pagination onChange={this.onChangePage} total={count/3} />
                 </div> 
             </div>

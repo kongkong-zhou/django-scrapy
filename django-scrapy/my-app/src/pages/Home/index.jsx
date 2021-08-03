@@ -59,9 +59,9 @@ export default class Home extends Component {
                             <h1 className="title">
                                 <strong>
                                     <span className="glyphicon glyphicon-stats" style={{color: "#B4CE63"}}></span>
-                                    <Link to={'cartoon/'}>最新动漫</Link>
+                                    <Link to={'dongman/'}>最新动漫</Link>
                                 </strong>
-                                <Link className="more" to={'/cartoon'}>更多<i>&gt;</i><i>&gt;</i></Link>
+                                <Link className="more" to={'/dongman'}>更多<i>&gt;</i><i>&gt;</i></Link>
                             </h1>
                             <Article list={cartoon}/>
                         </div> 

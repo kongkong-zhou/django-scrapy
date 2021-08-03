@@ -14,7 +14,7 @@ urlpatterns = [
     path("variety/<int:pk>/",views.VarietyDetail.as_view()),
 
     path("tags/dongzuopian/",views.DongzuoList.as_view()),
-    path("tags/xijupian/", views.ZhanzhenList.as_view()),
+    path("tags/xijupian/", views.XijuList.as_view()),
     path("tags/aiqingpian/",views.AiqingList.as_view()),
     path("tags/kehuanpian/", views.KehuanList.as_view()),
     path("tags/kongbupian/",views.KongbuList.as_view()),
@@ -42,10 +42,5 @@ urlpatterns = [
     path("tags/rihandongman/", views.JapenCartoonVarityList.as_view()),
     path("tags/oumeidongman/", views.AmericanCartoonVarityList.as_view()),
     path("tags/haiwaidongman/", views.OverseasCartoonVarityList.as_view()),
-    path("tags/haiwaiju/", views.OverseasList.as_view()),
     path("tags/dianyingjieshuo/",views.InterpretationList.as_view()),
-
-
-
-
 ]

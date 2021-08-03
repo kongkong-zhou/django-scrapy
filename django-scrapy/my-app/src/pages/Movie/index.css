@@ -439,7 +439,7 @@ button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:transpa
 .modal-header .close{margin-top:-2px}
 .modal-title{margin:0;line-height:1.42857143}
 .modal-body{position:relative;padding:20px}
-.modal-footer{padding:19px 20px 20px;margin-top:15px;text-align:right;border-top:1px solid #e5e5e5}
+.modal-footer{padding:10px 20px 20px;margin-top:15px;text-align:right;border-top:1px solid #e5e5e5}
 .modal-footer .btn + .btn{margin-bottom:0;margin-left:5px}
 .modal-footer .btn-group .btn + .btn{margin-left:-1px}
 .modal-footer .btn-block + .btn-block{margin-left:0}
@@ -647,7 +647,7 @@ body{margin:0;font-size:14px;line-height:20px;color:#444;overflow-x: hidden;back
  * ====================================================
 */
 .pagination{padding:20px 10px 1px 10px;background-color:#fff;text-align:center;clear:both}
-.pagination ul{display:inline-block;*display:inline;*zoom:1;margin-left:0;margin-bottom:0;padding: 0}
+/* .pagination ul{display:inline-block;*display:inline;*zoom:1;margin-left:0;margin-bottom:0;padding: 0}
 .pagination ul > li{display:inline}
 .pagination ul > li > a,.pagination ul > li > span{margin:0 5px;float:left;padding:8px 20px 7px;text-decoration:none;background-color:#ddd;color:#666;opacity: .88}
 .pagination-multi ul > li > a,.pagination-multi ul > li > span{padding:7px 16px;margin:0 2px;font-size: 12px;}
@@ -655,7 +655,7 @@ body{margin:0;font-size:14px;line-height:20px;color:#444;overflow-x: hidden;back
 .pagination ul > .active > a,.pagination ul > .active > span{background-color:#FF5E52;color:#fff}
 .pagination ul > .active > a,.pagination ul > .active > span{cursor:default}
 .pagination ul > li > span,.pagination ul > .disabled > span,.pagination ul > .disabled > a,.pagination ul > .disabled > a:hover,.pagination ul > .disabled > a:focus{color:#999999;background-color:transparent;cursor:default}
-.pagination ul > li.next-page > a{background-color: #FF5E52;color: #fff;}
+.pagination ul > li.next-page > a{background-color: #FF5E52;color: #fff;} */
 
 .ias_trigger{margin: 20px 0;}
 .ias_trigger a{background-color: #eee;display: block;line-height: 35px;text-align: center;font-size: 14px;color: #999;}
@@ -1100,7 +1100,17 @@ h4.ctitle {
  * footer
  * ====================================================
 */
-.footer{clear:both;color:#aaa;position:relative;z-index:1;margin-left: 215px;margin-right: 20px;padding: 20px 0 30px;border-top: 2px solid #eee;font-size: 12px;}
+.footer{
+  clear:both;
+  color:#aaa;
+  position:relative;
+  z-index:1;
+  margin-left: 2px;
+  margin-right: 20px;
+  padding: 20px 0 30px;
+  border-top: 2px solid #eee;
+  font-size: 12px;
+}
 .footer a{color:#aaa;}
 .footer a:hover{color: #999;}
 
@@ -1689,7 +1699,7 @@ body .bd_weixin_popup .bd_weixin_popup_foot{display: none;}
     .nav li a{padding:10px 0 10px 15px;}
     .feeds{padding-left:4px;}
     .feeds a{margin-right:2px;}
-    .footer{margin-left: 185px;}
+    .footer{margin-left: 1px;}
     .comt-comterinfo h4{}
     .post-tags{display: none;}
     .excerpt .post-linkto{display: none;}

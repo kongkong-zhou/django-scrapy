@@ -4,10 +4,11 @@ from ..items import MovieApiItem,ClassificationItem
 class Niuninwum3u8Spider(scrapy.Spider):
     name = 'niuninwum3u8'
     allowed_domains = ['765zy.com']
-    start_urls = ['http://www.765zy.com/?m=vod-type-id-2.html',
+    start_urls = ["http://www.765zy.com/?m=vod-type-id-1.html",
+                  'http://www.765zy.com/?m=vod-type-id-2.html',
                   "http://www.765zy.com/?m=vod-type-id-3.html",
-                  "http://www.765zy.com/?m=vod-type-id-4.html",
-                  "http://www.765zy.com/?m=vod-type-id-1.html"]
+                  "http://www.765zy.com/?m=vod-type-id-4.html"
+                  ]
     base_url = "http://www.765zy.com"
 
     def parse(self, response):

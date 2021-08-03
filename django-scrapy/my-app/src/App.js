@@ -17,13 +17,13 @@ export default class App extends Component {
         <Header/>
           <Switch>
             <Route exact path="/" component={Home}/>
-            <Route exact path="/tags/:tag/" component={Tags}/>
             <Route path="/movie" component={Movie}/>
             <Route path="/television" component={Tele}/>
             <Route path="/dongman" component={Cartoon}/>
             <Route path="/zongyi" component={Variety}/>
             <Route path="/show/:id" component={Show}/>
             <Route path="/play/:id/:idx" component={Play}/>
+            <Route exact path="/tags/:tag/" component={Tags}/>
           </Switch>
         <Footer/>
       </div>

@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from rest_framework import generics
 from django.db.models import Q
+from rest_framework import filters
 from . import models
 from . import serializers
 
 class MovieApiList(generics.ListAPIView):
     queryset = models.Movieapi.objects.all()
     serializer_class = serializers.MovieSerializer
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('name', 'other_name')
 
 class MovieApiDetail(generics.RetrieveAPIView):
     queryset = models.Movieapi.objects.all()
@@ -16,7 +19,7 @@ class MovieApiDetail(generics.RetrieveAPIView):
 class MovieList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(
         Q(classification=1) | Q(classification=2) | Q(classification=3) | Q(classification=4) | Q(classification=5)
-        | Q(classification=6) | Q(classification=7) | Q(classification=8) | Q(classification=9) | Q(classification=10)).order_by('-update_time')
+        | Q(classification=6) | Q(classification=7) | Q(classification=8) | Q(classification=9) | Q(classification=10)).order_by('-id')
     serializer_class = serializers.MovieSerializer
 
 class MovieDetail(generics.RetrieveAPIView):
@@ -28,7 +31,7 @@ class MovieDetail(generics.RetrieveAPIView):
 class TeleList(generics.ListAPIView):
     queryset = models.Movieapi.objects.filter(
         Q(classification=11) | Q(classification=12) | Q(classification=13) | Q(classification=14) | Q(classification=15)
-        | Q(classification=16) | Q(classification=17)).order_by('-update_time')
+        | Q(classification=16) | Q(classification=17)).order_by('-id')
     serializer_class = serializers.MovieSerializer
 class TeleDetail(generics.RetrieveAPIView):
     queryset = models.Movieapi.objects.filter(
