@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qv&e$o=bb1vt%bzv=w-o*@lp%7hk3nhut!^rx^uy*v5mv3uiv-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'mydjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sql_test1',
+        'NAME': 'demodb',
         'HOST': '127.0.0.1',
         'PORT': 3306,
         'USER': 'root',
-        'PASSWORD': 'test123456',
+        'PASSWORD': '123456',
     }
 }
 
@@ -127,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
