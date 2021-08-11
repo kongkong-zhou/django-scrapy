@@ -19,7 +19,7 @@ export default class Header extends Component {
             classify_tag:"movie"
         }
         console.log(keyWord);
-        axios.get(`http://localhost:3000/api/?search=${keyWord}`).then(
+        axios.get(`http://localhost:3000/api1/api/?search=${keyWord}`).then(
             response => {
                 PubSub.publish(`atguigu`,{isLoading:false,list:response.data.results,count:response.data.count,tag:tag});
             },

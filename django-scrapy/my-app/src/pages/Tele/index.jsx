@@ -10,7 +10,7 @@ import Side from '../../components/Side'
 
 export default class Movie extends Component {
     state = {
-        url:`http://localhost:3000/api/tele/?page=`,
+        url:`http://localhost:3000/api1/api/tele/?page=`,
         pageNum:''
     }
 

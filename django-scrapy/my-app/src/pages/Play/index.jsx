@@ -14,7 +14,7 @@ export default class Play extends Component {
         err:'',
         list:[],
         list2:[],
-        url:"http://localhost:3000",
+        url:"http://localhost:3000/api1",
       }
       
       updateAppState = (stateObj) => {

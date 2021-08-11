@@ -10,7 +10,7 @@ import Side from '../../components/Side'
 
 export default class Cartoon extends Component {
     state = {
-        url:`http://localhost:3000/api/cartoon?page=`,
+        url:`http://localhost:3000/api1/api/cartoon/?page=`,
         pageNum:''
     }
 

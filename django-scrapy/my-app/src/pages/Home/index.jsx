@@ -5,7 +5,7 @@ import Article from '../../components/Article'
 
 export default class Home extends Component {
     state = {
-        url:"http://localhost:3000/api/",
+        url:"http://localhost:3000/api1/api/",
         movie:[],
         tele:[],
         cartoon:[],
@@ -18,7 +18,7 @@ export default class Home extends Component {
             } else if (`${tag}` === 'tele') {
                 this.setState({tele:response.data.results.slice(24)});
             } else {
-                this.setState({cartoon:response.data.results.slice(19)});
+                this.setState({cartoon:response.data.results.slice(20)});
             }
         }).catch(error => {
             this.setState({err:error.message});

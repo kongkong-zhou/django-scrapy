@@ -8,7 +8,7 @@ import Container from '../../components/Container'
 
 export default class Tags extends Component {
     state = {
-        url:`http://localhost:3000/api/tags/`,
+        url:`http://localhost:3000/api1/api/tags/`,
         pageNum:'',
     }
 

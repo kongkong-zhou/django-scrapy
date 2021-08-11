@@ -1,23 +1,23 @@
-version: '3.6'
+version: '3'
 services:
   app:
-    restart: always
-    build: .
+    build: ./mydjango
     command: bash -c "uwsgi --ini uwsgi.ini"
     volumes:
-      - .:/var/www/html
+      - ./mydjango:/var/www/html
     ports:
       - "8000:8000"
     depends_on:
-      -db
+      - db
+    restart: always
 
   db:
-    image: mysql:5.7
+    image: mysql/mysql-server
     volumes:
       - "./mysql:/var/lib/mysql"
     ports:
-      - "3306:3306"
-    restsrt: always
+      - "3307:3306"
+    restart: always
     environment:
       - MYSQL_DATABASE=demodb
       - MYSQL_ROOT_PASSWORD=123456
@@ -27,8 +27,9 @@ services:
     ports:
       - "80:80"
     volumes:
-      -./static:/usr/share/nginx/html/static:ro
-      - ./build:/usr/share/nginx/html
+      # - ./mydjango/static/:/usr/share/nginx/html/static/:ro
+      - ./my-app/build:/usr/share/nginx/html
+    #  - ./my-app/build/static:/usr/share/nginx/html/static:ro
     links:
       - app
     depends_on:
