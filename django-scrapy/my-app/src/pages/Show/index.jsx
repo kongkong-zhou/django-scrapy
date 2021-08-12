@@ -10,7 +10,7 @@ export default class Show extends Component {
         err:'',
         list:[],
         tag:[],
-        url:"http://localhost:3000/api1",
+        url:"http://localhost:80",
       }
       
       updateAppState = (stateObj) => {

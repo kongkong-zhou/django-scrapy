@@ -5,7 +5,7 @@ import Article from '../../components/Article'
 
 export default class Home extends Component {
     state = {
-        url:"http://localhost:3000/api1/api/",
+        url:"http://localhost:80/api/",
         movie:[],
         tele:[],
         cartoon:[],
